@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Hunter's Toolkit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #00ff00;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 255, 0, 0.1) 2px, rgba(0, 255, 0, 0.1) 4px);
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .tool-card {
+            background: rgba(0, 20, 0, 0.8);
+            border: 1px solid #00ff00;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: #00ff00;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+            background: rgba(0, 30, 0, 0.9);
+        }
+
+        .tool-card h2 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .tool-card p {
+            font-size: 0.9rem;
+            color: #00ff00;
+            opacity: 0.8;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(0, 255, 0, 0.8),
+                            0 0 30px rgba(0, 255, 0, 0.6);
+            }
+        }
+
+        .terminal-line {
+            font-family: 'Courier New', monospace;
+            color: #00ff00;
+            margin: 0.5rem 0;
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bug Hunter's Toolkit</h1>
+        
+        <div class="terminal-line">> Initializing security tools...</div>
+        <div class="terminal-line" style="animation-delay: 0.5s">> Loading modules...</div>
+        <div class="terminal-line" style="animation-delay: 1s">> System ready</div>
+
+        <div class="tools-grid">
+            <a href="{% url 'scan_ports' %}" class="tool-card">
+                <h2>Nmap Port Scan</h2>
+                <p>Advanced port scanning and network reconnaissance tool</p>
+            </a>
+            
+            <a href="{% url 'analyze_headers' %}" class="tool-card">
+                <h2>Analyze HTTP Headers</h2>
+                <p>Security analysis of HTTP response headers</p>
+            </a>
+            
+            <a href="{% url 'bruteforce_simulation' %}" class="tool-card">
+                <h2>Brute Force Simulation</h2>
+                <p>Test password strength and security measures</p>
+            </a>
+        </div>
+    </div>
+
+    <footer style="color: #888; margin-top: 50px; text-align: center; padding: 20px; border-top: 1px solid rgba(0, 255, 0, 0.2);">
+        <p style="margin-bottom: 10px;"><strong style="color: #00ff00;">Disclaimer:</strong> This toolkit is a simulated environment intended purely for educational and demonstrational purposes. It does not perform any real security attacks or scans.</p>
+        <p>Learn more about <a href="{% url 'security_practices' %}" style="color: #3CFF3C; text-decoration: none; border-bottom: 1px dotted #3CFF3C;">security best practices</a>.</p>
+    </footer>
+</body>
+</html>
